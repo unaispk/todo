@@ -1,7 +1,16 @@
-.about-p {
-    width: 500px;
-    color: #8eb5bd;
+.about-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    margin: 5% 30%;
-    box-sizing: border-box;
-}
+    height: 100vh;
+    padding: 0 20px;
+    margin-top: 0;
+  }
+  
+  .about-p {
+    max-width: 600px;
+    margin: auto;
+    color: #8eb5bd;
+  }
+  

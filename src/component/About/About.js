@@ -3,9 +3,8 @@ import "./About.css";
 
 const About = () => {
   return (
-    <div>
+    <div className="about-container">
       <div className="about-p">
-      
         <p>
         Welcome to our simple and efficient todo app, crafted with care by Muhammed Unais P K as part of his React.js learning journey. This app is designed to enhance your daily productivity by helping you keep track of tasks effortlessly.
         </p>

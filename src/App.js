@@ -5,18 +5,16 @@ import Header from "./component/Header/Header";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 const App = () => {
   return (
-
     <Router>
-    <Header />
-    <Routes>
-      <Route path="/" exact element={<TodoApp />} />
+      <Header />
 
-      <Route path="/About" Component={About}/>
-    </Routes>
-  </Router>
+      <Routes>
+        <Route path="/" exact element={<TodoApp />} />
 
+        <Route path="/About" Component={About} />
+      </Routes>
+    </Router>
   );
 };
 
 export default App;
-

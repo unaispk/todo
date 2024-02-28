@@ -37,6 +37,9 @@ export default class TodoApp extends Component {
     );
   };
 
+
+
+
   deleteItem = (key) => {
     this.setState(
       (prevState) => ({
@@ -48,11 +51,22 @@ export default class TodoApp extends Component {
       }
     );
   };
+  handleLiClick = (index) => {
+    // Handle click on li, if needed
+    console.log("Clicked on item:", this.state.items[index]);
+  };
+
+  handleDeleteItemClick = (event, index) => {
+    event.stopPropagation(); 
+
+    this.deleteItem(index);
+  };
 
   render() {
     const { input, items } = this.state;
 
     return (
+      
       <div className="todo-container">
         <form className="input-section" onSubmit={this.storeItems}>
           <h1>To-do App</h1>
@@ -65,12 +79,12 @@ export default class TodoApp extends Component {
         </form>
         <ul>
           {items.map((data, index) => (
-            <li key={index}>
+            <li key={index} onClick={() => this.handleLiClick(index)}>
               {data}{" "}
-              <i
+              <div className="trashBtn" ><i
                 className="fa-regular fa-trash-can icon2"
-                onClick={() => this.deleteItem(index)}
-              ></i>
+                onClick={(event) => this.handleDeleteItemClick(event, index)}
+              ></i></div>
             </li>
           ))}
         </ul>
